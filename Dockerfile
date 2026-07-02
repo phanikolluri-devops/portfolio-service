@@ -4,5 +4,5 @@ COPY ./ /app
 RUN chmod +x gradlew &&  ./gradlew bootJar --no-daemon -x test
 
 FROM docker.io/library/openjdk:21-ea
-COPY --from=builder /app/build/libs/*.jar  /app/portfolio-service.jar
+COPY --from=builder /app/build/libs/*.jar  ./portfolio-service.jar
 ENTRYPOINT ["java", "-jar", "portfolio-service.jar"]
