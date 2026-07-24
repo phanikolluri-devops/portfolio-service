@@ -8,6 +8,17 @@ jobs:
       - name: build image
         run: make docker-build
 
+  eks-deploy:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6
+        with:
+          repository: phanikolluri-devops/helm-chart-v1
+          path: helm
+      - name: helm deploy
+        run: make eks-deploy
+
   
         
 
