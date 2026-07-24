@@ -1,4 +1,4 @@
-name: CI -  Analytics Service
+name: CI -  Portfolio Service
 on: [push]
 jobs:
   docker-build:
